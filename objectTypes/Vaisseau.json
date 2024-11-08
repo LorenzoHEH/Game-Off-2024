@@ -1,0 +1,57 @@
+{
+	"name": "Vaisseau",
+	"plugin-id": "Sprite",
+	"sid": 984730342943893,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "EightDir",
+			"name": "8Directions",
+			"sid": 418903654663797
+		},
+		{
+			"behaviorId": "bound",
+			"name": "LimitéÀLaScène",
+			"sid": 428373369919679
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 250,
+						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 9432947,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Point d'image 1",
+								"x": 0.996,
+								"y": 0.504
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 490333824107628,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

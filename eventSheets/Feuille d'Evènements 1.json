@@ -1,0 +1,627 @@
+{
+	"name": "Feuille d'Evènements 1",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "SFX",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 742283288401382
+		},
+		{
+			"eventType": "variable",
+			"name": "Musique",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 670622567725773
+		},
+		{
+			"eventType": "variable",
+			"name": "Volume",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 299710738616407
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Souris",
+					"sid": 744437264394826,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "BtnPlay"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 161060072376546,
+					"parameters": {
+						"audio-file": "bruit pouet pouet",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 444943618109702
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 571714295613290
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "AffichageMusique",
+					"sid": 550603554332061,
+					"parameters": {
+						"text": "Musique"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "AffichageSFX",
+					"sid": 628079595994039,
+					"parameters": {
+						"text": "SFX"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "AffichageVolume",
+					"sid": 934551203559341,
+					"parameters": {
+						"text": "Volume"
+					}
+				}
+			],
+			"sid": 163591134966887
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Souris",
+					"sid": 153892397089093,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "BtnPlus"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 761845314617400,
+					"parameters": {
+						"variable": "Volume",
+						"comparison": 2,
+						"value": "9"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 863830827832532,
+					"parameters": {
+						"variable": "Volume",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 504739595597291
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Souris",
+					"sid": 497026248704447,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "BtnMoins"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 977020816779447,
+					"parameters": {
+						"variable": "Volume",
+						"comparison": 4,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 476718220793118,
+					"parameters": {
+						"variable": "Volume",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 550631539623755
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Souris",
+					"sid": 879317357468062,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "BtnPlus2"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 563767450500292,
+					"parameters": {
+						"variable": "SFX",
+						"comparison": 2,
+						"value": "9"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 257215099501920,
+					"parameters": {
+						"variable": "SFX",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 260020956286571
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Souris",
+					"sid": 471307643497261,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "BtnMoins2"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 584085123691407,
+					"parameters": {
+						"variable": "SFX",
+						"comparison": 4,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 515314270833443,
+					"parameters": {
+						"variable": "SFX",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 693185931895670
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Souris",
+					"sid": 315563176759505,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "BtnPlus3"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 981687977380770,
+					"parameters": {
+						"variable": "Musique",
+						"comparison": 2,
+						"value": "9"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 390312908149472,
+					"parameters": {
+						"variable": "Musique",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 234170505923996
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Souris",
+					"sid": 781122480582927,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "BtnMoins3"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 393878808907863,
+					"parameters": {
+						"variable": "Musique",
+						"comparison": 4,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 972773643796810,
+					"parameters": {
+						"variable": "Musique",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 631500120521879
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 915222743254182,
+					"parameters": {
+						"variable": "Volume",
+						"comparison": 0,
+						"value": "3"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 707387136203901,
+					"parameters": {
+						"variable": "SFX",
+						"comparison": 0,
+						"value": "4"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 830316253683836,
+					"parameters": {
+						"variable": "Musique",
+						"comparison": 0,
+						"value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "BtnValidate",
+					"sid": 278202828966936,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 830836302325296
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Souris",
+					"sid": 190827897197076,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "BtnSettings"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 167622251728678,
+					"parameters": {
+						"layout": "Settings"
+					}
+				}
+			],
+			"sid": 415242278227871
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Joueur",
+					"sid": 194193072919540,
+					"parameters": {
+						"object": "Ennemi"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "restart-layout",
+					"objectClass": "System",
+					"sid": 530541372069482
+				}
+			],
+			"sid": 363453464701070
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Souris",
+					"sid": 418498546605762,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "BtnValidate"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 843745336423560,
+					"parameters": {
+						"layout": "Scène 1"
+					}
+				}
+			],
+			"sid": 944613416746916
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Joueur",
+					"sid": 318350993270001,
+					"parameters": {
+						"object": "Sortie1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 491858527142988,
+					"parameters": {
+						"layout": "Scène 2"
+					}
+				}
+			],
+			"sid": 118326994734916
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Joueur",
+					"sid": 139472631264876,
+					"parameters": {
+						"object": "FausseSortie"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 970406899684189,
+					"parameters": {
+						"audio-file": "bruit pouet pouet",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 387558726357799
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Clavier",
+					"sid": 741918183507968,
+					"parameters": {
+						"key": 32
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Vaisseau",
+					"sid": 865352563539802,
+					"parameters": {
+						"object": "Balle",
+						"layer": "0",
+						"image-point": "1",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				}
+			],
+			"sid": 985315194178578
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Balle",
+					"sid": 312748457400542,
+					"parameters": {
+						"object": "Sortie2"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 682169731525847,
+					"parameters": {
+						"layout": "Scène 3"
+					}
+				}
+			],
+			"sid": 431762027944727
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Balle",
+					"sid": 127142205832520,
+					"parameters": {
+						"object": "ADetruire"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-instvar",
+					"objectClass": "ADetruire",
+					"sid": 450075334442713,
+					"parameters": {
+						"instance-variable": "Vie",
+						"value": "1"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Balle",
+					"sid": 508318284566724
+				}
+			],
+			"sid": 608784402276604
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "ADetruire",
+					"sid": 177797116217291,
+					"parameters": {
+						"instance-variable": "Vie",
+						"comparison": 3,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "ADetruire",
+					"sid": 890367499978024
+				}
+			],
+			"sid": 823143789095027
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Souris",
+					"sid": 253566831073550,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "HiddenBtn"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 959171951882227,
+					"parameters": {
+						"layout": "Scène 4"
+					}
+				}
+			],
+			"sid": 893456160639044
+		}
+	],
+	"sid": 248134260730780
+}
