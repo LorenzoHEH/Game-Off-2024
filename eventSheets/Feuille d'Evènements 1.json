@@ -32,6 +32,46 @@
 			"sid": 299710738616407
 		},
 		{
+			"eventType": "variable",
+			"name": "1eChiffre",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 728050490723470
+		},
+		{
+			"eventType": "variable",
+			"name": "2eChiffre",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 864987329657045
+		},
+		{
+			"eventType": "variable",
+			"name": "3eChiffre",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 589662651885127
+		},
+		{
+			"eventType": "variable",
+			"name": "4eChiffre",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 179847699759028
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -93,6 +133,38 @@
 					"sid": 934551203559341,
 					"parameters": {
 						"text": "Volume"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "1eChiffre",
+					"sid": 392456565225823,
+					"parameters": {
+						"text": "1eChiffre"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "2eChiffre",
+					"sid": 256725607407373,
+					"parameters": {
+						"text": "2eChiffre"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "3eChiffre",
+					"sid": 683561664382485,
+					"parameters": {
+						"text": "3eChiffre"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "4eChiffre",
+					"sid": 202505466618250,
+					"parameters": {
+						"text": "4eChiffre"
 					}
 				}
 			],
@@ -621,6 +693,689 @@
 				}
 			],
 			"sid": 893456160639044
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Joueur2",
+					"sid": 819809798014428,
+					"parameters": {
+						"object": "DangerWall"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "restart-layout",
+					"objectClass": "System",
+					"sid": 254120475972230
+				}
+			],
+			"sid": 262311020651095
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Joueur2",
+					"sid": 909556192297704,
+					"parameters": {
+						"object": "SortieVersSC5"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 413455075875143,
+					"parameters": {
+						"layout": "Scène 5"
+					}
+				}
+			],
+			"sid": 550735220288554
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Souris",
+					"sid": 411663022938308,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "FalseBtnPlay"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 164326346268903,
+					"parameters": {
+						"audio-file": "bruit pouet pouet",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 471539737967429
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Souris",
+					"sid": 652183677045333,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "TruePlayBtn"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 899595624136455,
+					"parameters": {
+						"layout": "Scène 6"
+					}
+				}
+			],
+			"sid": 525173394812831
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Souris",
+					"sid": 295317028877952,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "MoinsChiffre1"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 818570357355700,
+					"parameters": {
+						"variable": "1eChiffre",
+						"comparison": 4,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 132230062866198,
+					"parameters": {
+						"variable": "1eChiffre",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 704761940769758
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Souris",
+					"sid": 510973674199431,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "MoinsChiffre2"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 156252634821668,
+					"parameters": {
+						"variable": "2eChiffre",
+						"comparison": 4,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 822446307276500,
+					"parameters": {
+						"variable": "2eChiffre",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 839249219614688
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Souris",
+					"sid": 896328688733548,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "MoinsChiffre3"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 969885186753474,
+					"parameters": {
+						"variable": "3eChiffre",
+						"comparison": 4,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 880363881615052,
+					"parameters": {
+						"variable": "3eChiffre",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 920326223712722
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Souris",
+					"sid": 324043912306627,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "MoinsChiffre4"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 388080420055612,
+					"parameters": {
+						"variable": "4eChiffre",
+						"comparison": 4,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 869935574706163,
+					"parameters": {
+						"variable": "4eChiffre",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 420433841609275
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Souris",
+					"sid": 130015724738401,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "PlusChiffre1"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 449378796573525,
+					"parameters": {
+						"variable": "1eChiffre",
+						"comparison": 2,
+						"value": "9"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 688382663592646,
+					"parameters": {
+						"variable": "1eChiffre",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 764413108829328
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Souris",
+					"sid": 488417162837972,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "PlusChiffre2"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 477679553337222,
+					"parameters": {
+						"variable": "2eChiffre",
+						"comparison": 2,
+						"value": "9"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 870246282370304,
+					"parameters": {
+						"variable": "2eChiffre",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 166222199589568
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Souris",
+					"sid": 977138398343509,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "PlusChiffre3"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 467452905263433,
+					"parameters": {
+						"variable": "3eChiffre",
+						"comparison": 2,
+						"value": "9"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 987489314727496,
+					"parameters": {
+						"variable": "3eChiffre",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 324088166977474
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Souris",
+					"sid": 347701202336392,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "PlusChiffre4"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 881904525141169,
+					"parameters": {
+						"variable": "4eChiffre",
+						"comparison": 2,
+						"value": "9"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 124163166879267,
+					"parameters": {
+						"variable": "4eChiffre",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 818728514564132
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 483034019319870,
+					"parameters": {
+						"variable": "1eChiffre",
+						"comparison": 0,
+						"value": "1"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 948021820683985,
+					"parameters": {
+						"variable": "2eChiffre",
+						"comparison": 0,
+						"value": "7"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 126973265782626,
+					"parameters": {
+						"variable": "3eChiffre",
+						"comparison": 0,
+						"value": "4"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 633674883387692,
+					"parameters": {
+						"variable": "4eChiffre",
+						"comparison": 0,
+						"value": "6"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "EnterCode",
+					"sid": 717671969990951,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "EnterTheCode",
+					"sid": 399620053953596,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Code2",
+					"sid": 908983722286363,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 809640279067049
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Souris",
+					"sid": 440031782262629,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "EnterTheCode"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 963226281509967,
+					"parameters": {
+						"layout": "Settings"
+					}
+				}
+			],
+			"sid": 726345384815655
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Souris",
+					"sid": 403806136231934,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "FalseReturnToMenu"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 408060481489473,
+					"parameters": {
+						"audio-file": "bruit pouet pouet",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 863590592459418
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 902889457559279,
+					"parameters": {
+						"variable": "Volume",
+						"comparison": 0,
+						"value": "7"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 552489013615142,
+					"parameters": {
+						"variable": "SFX",
+						"comparison": 0,
+						"value": "2"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 898850135792525,
+					"parameters": {
+						"variable": "Musique",
+						"comparison": 0,
+						"value": "5"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "finish",
+					"sid": 791911209130464,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "finishtxt",
+					"sid": 104821056684294,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 600430694374446
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Souris",
+					"sid": 349479910118196,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "finish"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 167548426809059,
+					"parameters": {
+						"layout": "Scène 7"
+					}
+				}
+			],
+			"sid": 942612218688958
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Souris",
+					"sid": 532286365219082,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "GoToCredits"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 868254396074120,
+					"parameters": {
+						"layout": "Credits"
+					}
+				}
+			],
+			"sid": 257606824737312
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Souris",
+					"sid": 158018303876768,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "TrueReturnToMenu"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 384969742044889,
+					"parameters": {
+						"layout": "Menu"
+					}
+				}
+			],
+			"sid": 516617342897446
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Souris",
+					"sid": 458554580187365,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "ReturnToMenu"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 301698546305377,
+					"parameters": {
+						"layout": "Menu"
+					}
+				}
+			],
+			"sid": 209017368436132
 		}
 	],
 	"sid": 248134260730780
